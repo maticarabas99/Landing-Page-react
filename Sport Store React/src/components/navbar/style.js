@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink} from 'react-router-dom';
 
 export const NavbarContainer = styled.div`
 display: flex;
@@ -14,6 +15,17 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 10px;
+@media (max-width: 768px) {
+display: block;
+right: ${(props) => (props.menuHamburguesa ? "0" : "-100%")};
+transition: all 0.5s ease;
+position: absolute;
+top: 70px;
+background-color: black;
+height: 70vh;
+width: 30vh;
+border-radius: 0 0 0 20px;
+}
 `
 export const NavbarList = styled.a`
 display: flex;
@@ -22,11 +34,12 @@ align-items: center;
 list-style-type: none;
 font-family: 'REM', sans-serif;
 margin: 10px;
-@media (max-width: 425px) {
-    display: none;
+@media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 40px;
 }
 `
-export const List = styled.a`
+export const List = styled(NavLink)`
 color: white;`
 
 export const NavbarLogo = styled.img`
@@ -49,4 +62,30 @@ display: flex;
 align-items: center;
 justify-content: center;
 gap: 10px;
+`
+export const NavBarBtn = styled.div`    
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 10px;
+@media (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 40px;
+    gap: 20px;
+}`
+export const ToggleMenu = styled.button`
+background-color: var(--amarillo);
+color: black;
+display: none;
+@media (max-width: 768px) {
+    display: block;
+}
+`
+export const HamburguerMenu = styled.div`
+display: none;
+font-size: 2.5rem;
+color: #fff;
+@media (max-width: 1024px) {
+display: block;
+}
 `

@@ -1,11 +1,13 @@
-
-import './App.css'
-import { HomeScreen } from './screens/home/home_screen'
+import "./App.css";
+import { MenuHamburguesaProvider } from "./components/context/menu_hamburguesa";
+import Routes from "./routes/routes";
 
 function App() {
-  
-
-  return <HomeScreen/>  
+  return (
+    <MenuHamburguesaProvider>
+      <Routes />
+    </MenuHamburguesaProvider>
+  );
 }
 
-export default App
+export default App;
